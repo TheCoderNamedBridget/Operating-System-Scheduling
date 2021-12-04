@@ -38,11 +38,7 @@ class PriorityRR implements Algorithm
 	@Override
 	public void schedule() {
 		badSort();
-//		for ( int i = 0; i < list.size(); i++ )
-//		{
-//			System.out.println(list.get(i).toString());
-//		}
-//		System.out.println("STARTS REAL HERE");
+		
 		while ( jobsCompleted != list.size() - 1 )
 		{
 			for ( int i = 0; i < list.size(); i++ )
@@ -51,7 +47,8 @@ class PriorityRR implements Algorithm
 				curJobIndex = i;
 				if ( burstTime > 0 )
 				{
-					System.out.println(pickNextTask().toString());
+					Task t = pickNextTask();
+					CPU.run(t, timeSlot);
 				}
 			}
 		}

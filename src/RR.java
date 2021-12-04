@@ -29,7 +29,8 @@ class RR implements Algorithm
 				curJobIndex = i;
 				if ( burstTime > 0 )
 				{
-					System.out.println(pickNextTask().toString());
+					Task t = pickNextTask();
+					CPU.run(t, timeSlot);
 				}
 			}
 			

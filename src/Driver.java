@@ -18,9 +18,10 @@ import java.io.*;
 
 public class Driver
 {
+	CPU c = new CPU();
     public static void main(String[] args) throws IOException {
     	args = new String[2];
-    	args[0] = "PRI-RR";
+    	args[0] = "SJF";
     	args[1] = "src\\book.txt";
         if (args.length != 2) {
             System.err.println("Usage: java Driver <algorithm> <schedule>");

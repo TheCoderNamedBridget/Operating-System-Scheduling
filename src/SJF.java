@@ -20,7 +20,8 @@ class SJF implements Algorithm
 	{
 		for ( int i = 0; i < list.size(); i++ )
 		{
-			System.out.println(pickNextTask().toString());
+			Task t = pickNextTask();
+			CPU.run(t, t.getBurst());
 		}
 	}
 
